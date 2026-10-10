@@ -60,7 +60,7 @@ orderForm.addEventListener('submit',async function(event){
     order_details:buildOrderMessage()
   };
   try{
-    const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(STORE_EMAIL),{
+    const response=await fetch('https://formsubmit.app/f/cf8c7246wh',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
@@ -72,7 +72,7 @@ orderForm.addEventListener('submit',async function(event){
     orderStatus.textContent='';
     window.scrollTo({top:0,behavior:'smooth'});
   }catch(error){
-    orderStatus.textContent='Your order could not be submitted. Please check your internet connection and try again. If this is your first order, activate FormSubmit using the confirmation email sent to the store inbox.';
+    orderStatus.textContent='Your order could not be submitted. Please check your internet connection and FormSubmit form settings, then try again.';
     orderButton.disabled=false;
     orderButton.textContent='Place Order';
   }
